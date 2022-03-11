@@ -1,4 +1,6 @@
 const mongoose = require(`mongoose`);
+const bcrypt = require("bcrypt");
+const saltRounds = 10; //10번 해싱
 
 const userSchema = mongoose.Schema({
   name: {
@@ -8,7 +10,7 @@ const userSchema = mongoose.Schema({
   email: {
     type: String,
     trim: true, //space 없애주는 역할
-    unique: 1,
+    // unique: 1,
   },
   password: {
     type: String,
